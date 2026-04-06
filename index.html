@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulse — App Screenshots</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #1a1a2e;
+  padding: 40px;
+  display: flex; flex-direction: column; gap: 60px; align-items: center;
+}
+
+.label {
+  color: rgba(157,127,240,0.7);
+  font-size: 12px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; text-align: center;
+  margin-bottom: 16px;
+}
+
+/* PHONE FRAME */
+.phone-wrap {
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.phone {
+  width: 390px;
+  background: #0f0f18;
+  border-radius: 54px;
+  border: 2px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+  box-shadow: 0 60px 120px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.1);
+  position: relative;
+}
+
+.phone-notch-bar {
+  background: #0f0f18;
+  padding: 14px 24px 0;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.phone-time { font-size: 15px; font-weight: 600; color: #f0ede8; }
+.phone-icons { font-size: 13px; color: #f0ede8; display: flex; gap: 6px; align-items: center; }
+
+.phone-island {
+  width: 120px; height: 34px; background: #000;
+  border-radius: 20px; margin: 10px auto 0;
+}
+
+.screen {
+  padding: 20px 20px 32px;
+  min-height: 760px;
+}
+
+/* COLORS */
+:root {
+  --purple: #9d7ff0;
+  --pink: #e85f8a;
+  --accent: #e8c547;
+  --teal: #4fc17a;
+  --blue: #5b9ef0;
+  --text: #f0ede8;
+  --text2: rgba(240,237,232,0.55);
+  --text3: rgba(240,237,232,0.28);
+  --surface: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.08);
+}
+
+/* SCREEN 1 — HOME */
+.s1-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.s1-greeting { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+.s1-date { font-size: 13px; color: var(--text2); margin-top: 2px; }
+.s1-badge {
+  background: rgba(157,127,240,0.15); border: 1px solid rgba(157,127,240,0.3);
+  border-radius: 20px; padding: 6px 14px;
+  font-size: 13px; font-weight: 500; color: var(--purple);
+}
+
+.week-strip { display: flex; gap: 6px; margin-bottom: 18px; }
+.week-day { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.week-day-name { font-size: 10px; color: var(--text3); text-transform: uppercase; }
+.week-day-num {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 500; color: var(--text2);
+}
+.week-day-num.today { background: var(--purple); color: white; font-weight: 700; }
+.week-pips { display: flex; gap: 3px; }
+.pip { width: 4px; height: 4px; border-radius: 50%; background: var(--border); }
+.pip.done { }
+
+.quote-card {
+  background: linear-gradient(135deg, rgba(157,127,240,0.15), rgba(232,95,138,0.08));
+  border: 1px solid rgba(157,127,240,0.2);
+  border-radius: 16px; padding: 16px;
+  margin-bottom: 16px;
+}
+.quote-text { font-size: 14px; color: var(--text2); line-height: 1.5; }
+
+.stats-row { display: flex; gap: 10px; margin-bottom: 16px; }
+.stat-card { flex: 1; background: var(--surface); border-radius: 12px; padding: 12px; text-align: center; }
+.stat-num { font-size: 18px; font-weight: 600; color: var(--text); }
+.stat-lbl { font-size: 10px; color: var(--text3); margin-top: 3px; }
+
+.section-title-sm {
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text3); margin-bottom: 10px;
+}
+
+.habit-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 14px; display: flex;
+  align-items: center; gap: 12px; margin-bottom: 8px;
+}
+.habit-card.done { border-color: rgba(79,193,122,0.3); }
+.habit-card.done2 { border-color: rgba(157,127,240,0.25); }
+
+.habit-check {
+  width: 36px; height: 36px; border-radius: 50%; border: 2px solid;
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700;
+}
+.habit-check.checked { color: white; }
+
+.habit-name { font-size: 14px; font-weight: 500; color: var(--text); }
+.habit-meta { font-size: 11px; color: var(--text3); margin-top: 3px; display: flex; gap: 8px; align-items: center; }
+.habit-dots { display: flex; gap: 3px; }
+.hdot { width: 5px; height: 5px; border-radius: 50%; background: var(--border); }
+
+.mood-section { background: var(--surface); border-radius: 16px; padding: 16px; margin-bottom: 16px; text-align: center; }
+.mood-title { font-size: 12px; color: var(--text2); margin-bottom: 12px; }
+.mood-options { display: flex; gap: 12px; justify-content: center; }
+.mood-opt { flex: 1; padding: 10px; border-radius: 12px; text-align: center; border: 1px solid var(--border); }
+.mood-opt.selected { background: rgba(157,127,240,0.15); border-color: var(--purple); }
+.mood-emoji { font-size: 22px; }
+.mood-label { font-size: 11px; color: var(--text2); margin-top: 4px; }
+
+/* SCREEN 2 — ACHIEVEMENT */
+.ach-header { text-align: center; margin-bottom: 24px; }
+.ach-title { font-size: 22px; font-weight: 700; color: var(--text); }
+.ach-sub { font-size: 13px; color: var(--text2); margin-top: 4px; }
+.ach-progress-bar { height: 4px; background: var(--border); border-radius: 2px; margin-top: 12px; }
+.ach-progress-fill { height: 100%; background: linear-gradient(90deg, var(--purple), var(--pink)); border-radius: 2px; width: 37.5%; }
+
+.ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.ach-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 18px; text-align: center;
+  position: relative;
+}
+.ach-card.unlocked { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
+.ach-card.locked { opacity: 0.45; }
+
+.ach-check {
+  position: absolute; top: 10px; right: 10px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--purple); display: flex; align-items: center;
+  justify-content: center; font-size: 10px; color: white;
+}
+
+.ach-icon { font-size: 36px; margin-bottom: 10px; }
+.ach-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.ach-desc { font-size: 11px; color: var(--text3); line-height: 1.4; }
+
+/* SCREEN 3 — BADGE SHARE */
+.share-screen {
+  background: linear-gradient(160deg, #1a0a2e 0%, #0f0f18 100%);
+  min-height: 760px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 40px 24px;
+  text-align: center;
+}
+
+.share-badge-bg {
+  width: 160px; height: 160px; border-radius: 40px;
+  background: linear-gradient(135deg, #e8c547, #f07c4f);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 72px; margin-bottom: 28px;
+  box-shadow: 0 20px 60px rgba(232,197,71,0.3);
+}
+
+.share-title { font-size: 28px; font-weight: 700; color: white; line-height: 1.1; margin-bottom: 8px; }
+.share-subtitle { font-size: 15px; color: rgba(240,237,232,0.5); margin-bottom: 32px; line-height: 1.5; }
+
+.share-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 20px 28px; margin-bottom: 24px; width: 100%;
+}
+.share-card-label { font-size: 11px; color: rgba(240,237,232,0.35); margin-bottom: 6px; }
+.share-card-value { font-size: 32px; font-weight: 700; color: var(--accent); }
+
+.share-btn {
+  width: 100%; padding: 16px; border-radius: 28px;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: white; font-size: 16px; font-weight: 600; text-align: center;
+  margin-bottom: 12px;
+}
+.share-btn-2 {
+  width: 100%; padding: 14px; border-radius: 28px;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(240,237,232,0.5); font-size: 15px; text-align: center;
+}
+
+/* SCREEN 4 — COMMUNITY */
+.comm-tabs { display: flex; gap: 0; background: var(--surface); border-radius: 12px; padding: 4px; margin-bottom: 20px; }
+.comm-tab { flex: 1; padding: 8px; text-align: center; font-size: 14px; font-weight: 500; color: var(--text2); border-radius: 8px; }
+.comm-tab.active { background: rgba(255,255,255,0.08); color: var(--text); }
+
+.comm-share-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-bottom: 14px; }
+.comm-share-title { font-size: 13px; font-weight: 500; color: var(--text2); margin-bottom: 12px; }
+.comm-share-btns { display: flex; gap: 8px; }
+.comm-share-btn { flex: 1; background: rgba(157,127,240,0.12); border: 1px solid rgba(157,127,240,0.2); border-radius: 10px; padding: 10px 8px; text-align: center; }
+.comm-share-btn-icon { font-size: 20px; }
+.comm-share-btn-label { font-size: 11px; color: var(--purple); margin-top: 4px; }
+
+.feed-item { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-bottom: 10px; }
+.feed-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.feed-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700; color: white; flex-shrink: 0;
+}
+.feed-avatar-2 { background: linear-gradient(135deg, #4fc17a, #5b9ef0); }
+.feed-name { font-size: 14px; font-weight: 600; color: var(--text); }
+.feed-time { font-size: 11px; color: var(--text3); }
+.feed-text { font-size: 14px; color: var(--text2); line-height: 1.5; margin-bottom: 10px; }
+.feed-bar { height: 4px; background: rgba(157,127,240,0.2); border-radius: 2px; margin-bottom: 10px; position: relative; overflow: hidden; }
+.feed-bar-fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--purple); border-radius: 2px; }
+.feed-like { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text3); }
+.feed-like-btn { color: var(--pink); font-size: 16px; }
+
+/* BOTTOM NAV */
+.bottom-nav {
+  display: flex; padding: 12px 20px 4px;
+  background: rgba(15,15,24,0.95); border-top: 1px solid var(--border);
+}
+.nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.nav-icon { font-size: 20px; opacity: 0.4; }
+.nav-icon.active { opacity: 1; }
+.nav-label { font-size: 10px; color: var(--text3); }
+.nav-label.active { color: var(--purple); }
+
+/* ALL SCREENS LAYOUT */
+.screens-row { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; justify-content: center; }
+.screen-block { display: flex; flex-direction: column; align-items: center; }
+.screen-title { color: rgba(157,127,240,0.6); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+
+<div class="label">Pulse App — Screenshot Kit for Video Production</div>
+
+<div class="screens-row">
+
+  <!-- SCREEN 1: HOME -->
+  <div class="screen-block">
+    <div class="screen-title">Screen 1 — Home</div>
+    <div class="phone">
+      <div class="phone-notch-bar">
+        <div class="phone-time">9:41</div>
+        <div class="phone-island" style="width:60px;height:6px;background:#000;border-radius:3px;margin:0;"></div>
+        <div class="phone-icons">▶▶ 🔋</div>
+      </div>
+      <div class="screen">
+        <div class="s1-header">
+          <div>
+            <div class="s1-greeting">Good morning, Sara ☀️</div>
+            <div class="s1-date">Saturday, 4 Apr</div>
+          </div>
+          <div class="s1-badge">4/6</div>
+        </div>
+
+        <div class="week-strip">
+          <div class="week-day"><div class="week-day-name">Mo</div><div class="week-day-num">30</div><div class="week-pips"><div class="pip done" style="background:#4fc17a"></div><div class="pip done" style="background:#9d7ff0"></div><div class="pip done" style="background:#e85f8a"></div></div></div>
+          <div class="week-day"><div class="week-day-name">Tu</div><div class="week-day-num">31</div><div class="week-pips"><div class="pip done" style="background:#4fc17a"></div><div class="pip done" style="background:#9d7ff0"></div><div class="pip"></div></div></div>
+          <div class="week-day"><div class="week-day-name">We</div><div class="week-day-num">1</div><div class="week-pips"><div class="pip done" style="background:#4fc17a"></div><div class="pip"></div><div class="pip"></div></div></div>
+          <div class="week-day"><div class="week-day-name">Th</div><div class="week-day-num">2</div><div class="week-pips"><div class="pip done" style="background:#4fc17a"></div><div class="pip done" style="background:#9d7ff0"></div><div class="pip done" style="background:#e85f8a"></div></div></div>
+          <div class="week-day"><div class="week-day-name">Fr</div><div class="week-day-num">3</div><div class="week-pips"><div class="pip done" style="background:#4fc17a"></div><div class="pip done" style="background:#e8c547"></div><div class="pip"></div></div></div>
+          <div class="week-day"><div class="week-day-name">Sa</div><div class="week-day-num today">4</div><div class="week-pips"><div class="pip done" style="background:#4fc17a"></div><div class="pip"></div><div class="pip"></div></div></div>
+          <div class="week-day"><div class="week-day-name">Su</div><div class="week-day-num">5</div><div class="week-pips"><div class="pip"></div><div class="pip"></div><div class="pip"></div></div></div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-text">"Your strength grows with every completed day." ✨</div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card"><div class="stat-num">4/6</div><div class="stat-lbl">today</div></div>
+          <div class="stat-card"><div class="stat-num">12</div><div class="stat-lbl">best streak</div></div>
+          <div class="stat-card"><div class="stat-num">78%</div><div class="stat-lbl">this week</div></div>
+        </div>
+
+        <div class="section-title-sm">Today</div>
+
+        <div class="habit-card done">
+          <div class="habit-check checked" style="border-color:#4fc17a; background:#4fc17a;">✓</div>
+          <div style="flex:1">
+            <div style="display:flex;align-items:center;gap:6px;">
+              <div class="habit-name">📚 Reading</div>
+            </div>
+            <div class="habit-meta">
+              <div class="habit-dots"><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div></div>
+              <span style="color:#4fc17a; font-size:11px;">7 days 🔥</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="habit-card done">
+          <div class="habit-check checked" style="border-color:#e85f8a; background:#e85f8a;">✓</div>
+          <div style="flex:1">
+            <div class="habit-name">🏃 Morning run</div>
+            <div class="habit-meta">
+              <div class="habit-dots"><div class="hdot" style="background:#e85f8a"></div><div class="hdot" style="background:#e85f8a"></div><div class="hdot" style="background:#e85f8a"></div><div class="hdot" style="background:#e85f8a"></div><div class="hdot" style="background:#e85f8a"></div><div class="hdot"></div><div class="hdot"></div></div>
+              <span>5/7 days</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="habit-card done2">
+          <div class="habit-check checked" style="border-color:#9d7ff0; background:#9d7ff0;">✓</div>
+          <div style="flex:1">
+            <div class="habit-name">💧 Water 2L</div>
+            <div class="habit-meta">
+              <div class="habit-dots"><div class="hdot" style="background:#9d7ff0"></div><div class="hdot" style="background:#9d7ff0"></div><div class="hdot" style="background:#9d7ff0"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div></div>
+              <span>3/7 days</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="habit-card">
+          <div class="habit-check" style="border-color:#e8c547;"></div>
+          <div style="flex:1">
+            <div class="habit-name">🧘 Meditation</div>
+            <div class="habit-meta">
+              <div class="habit-dots"><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div></div>
+              <span>0/7 days · 22:00 🔔</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="bottom-nav">
+        <div class="nav-item"><div class="nav-icon active">🏠</div><div class="nav-label active">Home</div></div>
+        <div class="nav-item"><div class="nav-icon">🕐</div><div class="nav-label">History</div></div>
+        <div class="nav-item"><div class="nav-icon">📅</div><div class="nav-label">Calendar</div></div>
+        <div class="nav-item"><div class="nav-icon">⭐</div><div class="nav-label">Badges</div></div>
+        <div class="nav-item"><div class="nav-icon">👥</div><div class="nav-label">Community</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: ACHIEVEMENT UNLOCK -->
+  <div class="screen-block">
+    <div class="screen-title">Screen 2 — Achievement</div>
+    <div class="phone">
+      <div class="phone-notch-bar">
+        <div class="phone-time">9:42</div>
+        <div class="phone-island" style="width:60px;height:6px;background:#000;border-radius:3px;margin:0;"></div>
+        <div class="phone-icons">▶▶ 🔋</div>
+      </div>
+      <div class="screen">
+        <div class="ach-header">
+          <div class="ach-title">Achievements</div>
+          <div class="ach-sub">3 of 8 unlocked</div>
+          <div class="ach-progress-bar"><div class="ach-progress-fill"></div></div>
+        </div>
+
+        <div class="ach-grid">
+          <div class="ach-card unlocked">
+            <div class="ach-check">✓</div>
+            <div class="ach-icon">🌱</div>
+            <div class="ach-name">First Step</div>
+            <div class="ach-desc">Add your first habit</div>
+          </div>
+          <div class="ach-card locked">
+            <div class="ach-icon">🔥</div>
+            <div class="ach-name">7 Days</div>
+            <div class="ach-desc">7 days in a row</div>
+          </div>
+          <div class="ach-card locked">
+            <div class="ach-icon">⚡</div>
+            <div class="ach-name">30 Days</div>
+            <div class="ach-desc">30 days straight</div>
+          </div>
+          <div class="ach-card locked">
+            <div class="ach-icon">⭐</div>
+            <div class="ach-name">Perfect Day</div>
+            <div class="ach-desc">All habits in one day</div>
+          </div>
+          <div class="ach-card unlocked">
+            <div class="ach-check">✓</div>
+            <div class="ach-icon">🏆</div>
+            <div class="ach-name">Collector</div>
+            <div class="ach-desc">Create 10 habits</div>
+          </div>
+          <div class="ach-card unlocked">
+            <div class="ach-check">✓</div>
+            <div class="ach-icon">✨</div>
+            <div class="ach-name">Triad</div>
+            <div class="ach-desc">Add 3 habits</div>
+          </div>
+          <div class="ach-card locked">
+            <div class="ach-icon">💎</div>
+            <div class="ach-name">2 Weeks</div>
+            <div class="ach-desc">14-day streak</div>
+          </div>
+          <div class="ach-card locked">
+            <div class="ach-icon">🎯</div>
+            <div class="ach-name">Century</div>
+            <div class="ach-desc">100 completions</div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-nav">
+        <div class="nav-item"><div class="nav-icon">🏠</div><div class="nav-label">Home</div></div>
+        <div class="nav-item"><div class="nav-icon">🕐</div><div class="nav-label">History</div></div>
+        <div class="nav-item"><div class="nav-icon">📅</div><div class="nav-label">Calendar</div></div>
+        <div class="nav-item"><div class="nav-icon active">⭐</div><div class="nav-label active">Badges</div></div>
+        <div class="nav-item"><div class="nav-icon">👥</div><div class="nav-label">Community</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: BADGE SHARE -->
+  <div class="screen-block">
+    <div class="screen-title">Screen 3 — Share Badge</div>
+    <div class="phone">
+      <div class="phone-notch-bar">
+        <div class="phone-time">9:43</div>
+        <div class="phone-island" style="width:60px;height:6px;background:#000;border-radius:3px;margin:0;"></div>
+        <div class="phone-icons">▶▶ 🔋</div>
+      </div>
+      <div class="share-screen">
+        <div class="share-badge-bg">🏆</div>
+        <div class="share-title">7 Days in a Row!</div>
+        <div class="share-subtitle">You've completed habits for 7 consecutive days. That's real consistency. 💜</div>
+        <div class="share-card">
+          <div class="share-card-label">Current Streak</div>
+          <div class="share-card-value">7 🔥</div>
+        </div>
+        <div class="share-btn">Share to Instagram Stories</div>
+        <div class="share-btn-2">Close</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 4: COMMUNITY -->
+  <div class="screen-block">
+    <div class="screen-title">Screen 4 — Community</div>
+    <div class="phone">
+      <div class="phone-notch-bar">
+        <div class="phone-time">9:44</div>
+        <div class="phone-island" style="width:60px;height:6px;background:#000;border-radius:3px;margin:0;"></div>
+        <div class="phone-icons">▶▶ 🔋</div>
+      </div>
+      <div class="screen">
+        <div style="font-size:22px;font-weight:700;color:var(--text);margin-bottom:16px;">Community</div>
+
+        <div class="comm-tabs">
+          <div class="comm-tab active">Feed</div>
+          <div class="comm-tab">Friends</div>
+        </div>
+
+        <div class="comm-share-card">
+          <div class="comm-share-title">Share your progress</div>
+          <div class="comm-share-btns">
+            <div class="comm-share-btn"><div class="comm-share-btn-icon">📅</div><div class="comm-share-btn-label">Today</div></div>
+            <div class="comm-share-btn"><div class="comm-share-btn-icon">📊</div><div class="comm-share-btn-label">This week</div></div>
+            <div class="comm-share-btn"><div class="comm-share-btn-icon">🔥</div><div class="comm-share-btn-label">Streak</div></div>
+          </div>
+        </div>
+
+        <div class="feed-item">
+          <div class="feed-header">
+            <div class="feed-avatar">S</div>
+            <div>
+              <div class="feed-name">Sara M.</div>
+              <div class="feed-time">Just now · Amsterdam 🇳🇱</div>
+            </div>
+          </div>
+          <div class="feed-text">Completed 4 out of 6 habits today ✓ 🏃 Morning run done!</div>
+          <div class="feed-bar"><div class="feed-bar-fill" style="width:67%"></div></div>
+          <div class="feed-like"><span class="feed-like-btn">♥</span> <span style="color:var(--pink)">Emma liked this</span></div>
+        </div>
+
+        <div class="feed-item">
+          <div class="feed-header">
+            <div class="feed-avatar feed-avatar-2">E</div>
+            <div>
+              <div class="feed-name">Emma L.</div>
+              <div class="feed-time">2 min ago · London 🇬🇧</div>
+            </div>
+          </div>
+          <div class="feed-text">Just finished morning yoga 🧘‍♀️ 5/7 days this week — best week yet!</div>
+          <div class="feed-bar"><div class="feed-bar-fill" style="width:71%; background: linear-gradient(90deg,#4fc17a,#5b9ef0)"></div></div>
+          <div class="feed-like"><span class="feed-like-btn">🤍</span> 3 likes</div>
+        </div>
+
+      </div>
+      <div class="bottom-nav">
+        <div class="nav-item"><div class="nav-icon">🏠</div><div class="nav-label">Home</div></div>
+        <div class="nav-item"><div class="nav-icon">🕐</div><div class="nav-label">History</div></div>
+        <div class="nav-item"><div class="nav-icon">📅</div><div class="nav-label">Calendar</div></div>
+        <div class="nav-item"><div class="nav-icon">⭐</div><div class="nav-label">Badges</div></div>
+        <div class="nav-item"><div class="nav-icon active">👥</div><div class="nav-label active">Community</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="color:rgba(157,127,240,0.4); font-size:12px; text-align:center; margin-top:20px;">
+  Open in browser → Cmd+Shift+4 (Mac) to screenshot each phone screen · Use in CapCut Screen Replacement
+</div>
+
+</body>
+</html>
