@@ -412,6 +412,152 @@ footer {
 
 .footer-copy { font-size: 13px; color: var(--text3); }
 
+/* MODAL */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1; pointer-events: all;
+}
+
+.modal {
+  background: #16162a;
+  border: 1px solid rgba(157,127,240,0.25);
+  border-radius: 32px;
+  padding: 48px 40px;
+  max-width: 460px; width: 100%;
+  position: relative;
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.3s ease;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(157,127,240,0.1);
+}
+
+.modal-overlay.open .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute; top: 20px; right: 24px;
+  background: none; border: none; color: var(--text3);
+  font-size: 24px; cursor: pointer; line-height: 1;
+  transition: color 0.2s;
+}
+.modal-close:hover { color: var(--text); }
+
+.modal-icon {
+  width: 56px; height: 56px; border-radius: 16px;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; margin-bottom: 20px;
+}
+
+.modal h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 700;
+  line-height: 1.2; margin-bottom: 8px;
+  color: var(--text);
+}
+
+.modal-subtitle {
+  font-size: 15px; color: var(--text2);
+  line-height: 1.6; margin-bottom: 32px;
+}
+
+.modal-form { display: flex; flex-direction: column; gap: 16px; }
+
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+
+.form-group label {
+  font-size: 13px; font-weight: 600;
+  color: var(--text2); letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 15px; font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.form-group select option {
+  background: #16162a; color: var(--text);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: rgba(157,127,240,0.6);
+  background: rgba(157,127,240,0.06);
+}
+
+.form-group input::placeholder { color: var(--text3); }
+
+.btn-submit {
+  margin-top: 8px;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: white; border: none; border-radius: 32px;
+  padding: 16px 32px; font-size: 16px; font-weight: 600;
+  cursor: pointer; font-family: 'DM Sans', sans-serif;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  box-shadow: 0 8px 32px rgba(157,127,240,0.3);
+  width: 100%;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(157,127,240,0.4); }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.modal-note {
+  text-align: center; font-size: 12px; color: var(--text3);
+  margin-top: 12px; line-height: 1.5;
+}
+
+/* Success state */
+.modal-success {
+  text-align: center; padding: 20px 0;
+  display: none;
+}
+
+.modal-success.show { display: block; }
+.modal-form.hide { display: none; }
+
+.success-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px; margin: 0 auto 20px;
+  box-shadow: 0 8px 32px rgba(157,127,240,0.4);
+}
+
+.modal-success h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px; font-weight: 700;
+  margin-bottom: 12px; color: var(--text);
+}
+
+.modal-success p {
+  font-size: 15px; color: var(--text2); line-height: 1.6;
+}
+
 /* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -470,7 +616,7 @@ footer {
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#download">Download</a></li>
   </ul>
-  <a href="#download" class="nav-cta">Download Free</a>
+  <button onclick="openModal()" class="nav-cta">Get Early Access</button>
 </nav>
 
 <!-- HERO -->
@@ -480,10 +626,10 @@ footer {
   <h1 class="fade-up delay-1">Build habits that<br><em>actually stick.</em></h1>
   <p class="hero-sub fade-up delay-2">Pulse is the habit tracker that supports you on good days and bad ones. No guilt. No pressure. Just consistent, beautiful progress — one day at a time.</p>
   <div class="hero-ctas fade-up delay-3">
-    <a href="#download" class="btn-primary">
+    <button onclick="openModal()" class="btn-primary">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 6.5 6 6.5 10.5C6.5 12.7 7.6 14.6 8.8 15.8C9.2 16.2 9.7 16.6 10 16.8C10.3 16.6 10.8 16.2 11.2 15.8C12.4 14.6 13.5 12.7 13.5 10.5C13.5 6 10 2 10 2Z" fill="white"/><circle cx="10" cy="10" r="2" fill="white" opacity="0.5"/></svg>
-      Download on App Store
-    </a>
+      Get Early Access — Free
+    </button>
     <a href="#how" class="btn-secondary">See how it works →</a>
   </div>
 
@@ -658,29 +804,72 @@ footer {
   </div>
 </section>
 
-<!-- DOWNLOAD -->
+<!-- DOWNLOAD / EARLY ACCESS -->
 <section class="download-section" id="download">
   <div class="download-bg"></div>
-  <h2>Start your first<br><em>habit today.</em></h2>
-  <p class="download-sub">Free to download. No account required. Just open and start.</p>
+  <h2>Be the first to<br><em>get Pulse free.</em></h2>
+  <p class="download-sub">Leave your details and we'll send you the app link the moment it's live — completely free.</p>
   <div class="download-ctas">
-    <a href="#" class="app-store-btn">
-      <span class="app-store-btn-icon"></span>
-      <span class="app-store-btn-text">
-        <span class="app-store-btn-sub">Download on the</span>
-        <span class="app-store-btn-name">App Store</span>
-      </span>
-    </a>
-    <a href="#" class="app-store-btn" style="opacity:0.5; cursor:not-allowed;">
-      <span class="app-store-btn-icon">▶</span>
-      <span class="app-store-btn-text">
-        <span class="app-store-btn-sub">Coming soon on</span>
-        <span class="app-store-btn-name">Google Play</span>
-      </span>
-    </a>
+    <button onclick="openModal()" class="btn-primary" style="font-size:17px; padding:18px 40px;">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C10 2 6.5 6 6.5 10.5C6.5 12.7 7.6 14.6 8.8 15.8C9.2 16.2 9.7 16.6 10 16.8C10.3 16.6 10.8 16.2 11.2 15.8C12.4 14.6 13.5 12.7 13.5 10.5C13.5 6 10 2 10 2Z" fill="white"/><circle cx="10" cy="10" r="2" fill="white" opacity="0.5"/></svg>
+      Get the App for Free
+    </button>
   </div>
-  <p class="download-note">Free · iOS 16+ · Available in EN / RU / NL</p>
+  <p class="download-note">Free · iOS 16+ · Available in EN / RU / NL · No spam, ever.</p>
 </section>
+
+<!-- EARLY ACCESS MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+
+    <div class="modal-icon">🚀</div>
+    <h2 id="modalTitle">Get Pulse for Free</h2>
+    <p class="modal-subtitle">Join the early access list. When the app launches, you'll be the first to receive a free download link — straight to your inbox.</p>
+
+    <form class="modal-form" id="earlyAccessForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Sara" required autocomplete="given-name">
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+          <option value="" disabled selected>Select your country</option>
+          <option>Netherlands</option>
+          <option>Russia</option>
+          <option>United States</option>
+          <option>United Kingdom</option>
+          <option>Germany</option>
+          <option>France</option>
+          <option>Spain</option>
+          <option>Italy</option>
+          <option>Belgium</option>
+          <option>Poland</option>
+          <option>Ukraine</option>
+          <option>Canada</option>
+          <option>Australia</option>
+          <option>Turkey</option>
+          <option>Brazil</option>
+          <option>India</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="email">Gmail address</label>
+        <input type="email" id="email" name="email" placeholder="yourname@gmail.com" required autocomplete="email" pattern="[a-zA-Z0-9._%+\-]+@gmail\.com">
+      </div>
+      <button type="submit" class="btn-submit" id="submitBtn">Notify me when it's live ✨</button>
+      <p class="modal-note">No spam. Only one email — when Pulse goes live. 🔒</p>
+    </form>
+
+    <div class="modal-success" id="modalSuccess">
+      <div class="success-icon">✓</div>
+      <h3>You're on the list!</h3>
+      <p>Thanks for joining, <span id="successName"></span>! 🎉<br>We'll email you at launch with your free download link.<br><br>Stay tuned — it's coming soon.</p>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -694,5 +883,59 @@ footer {
   <div class="footer-copy">© 2026 Pulse AI. All rights reserved.</div>
 </footer>
 
+<script>
+  function openModal() {
+    const overlay = document.getElementById('modalOverlay');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('name').focus();
+  }
+
+  function closeModal() {
+    const overlay = document.getElementById('modalOverlay');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const form = document.getElementById('earlyAccessForm');
+    const name = document.getElementById('name').value.trim();
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.classList.add('hide');
+        document.getElementById('successName').textContent = name;
+        document.getElementById('modalSuccess').classList.add('show');
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Notify me when it\'s live ✨';
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Notify me when it\'s live ✨';
+      alert('Network error. Please check your connection.');
+    }
+  }
+</script>
 </body>
 </html>
