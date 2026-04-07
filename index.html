@@ -558,6 +558,113 @@ footer {
   font-size: 15px; color: var(--text2); line-height: 1.6;
 }
 
+/* APP SCREENSHOTS */
+.ss-section { padding: 100px 60px; max-width: 1200px; margin: 0 auto; }
+.ss-phones-row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; align-items: flex-start; }
+.ss-phone-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.ss-phone-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); }
+.ss-clip {
+  width: 234px; height: 582px; overflow: hidden; position: relative;
+  border-radius: 33px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.07);
+}
+.ss-pf {
+  width: 390px; background: #0f0f18; border-radius: 54px;
+  border: 2px solid rgba(255,255,255,0.12);
+  position: absolute; top: 0; left: 0;
+  transform: scale(0.6); transform-origin: top left;
+  font-family: 'DM Sans', sans-serif;
+}
+.ss-nb { background: #0f0f18; padding: 14px 24px 0; display: flex; justify-content: space-between; align-items: center; }
+.ss-time { font-size: 15px; font-weight: 600; color: #f0ede8; }
+.ss-ico { font-size: 13px; color: #f0ede8; display: flex; gap: 6px; }
+.ss-isl { width: 60px; height: 6px; background: #000; border-radius: 3px; margin: 10px auto 0; }
+.ss-scr { padding: 20px 20px 32px; min-height: 760px; }
+.ss-bnav { display: flex; padding: 12px 20px 4px; background: rgba(15,15,24,0.95); border-top: 1px solid rgba(255,255,255,0.08); }
+.ss-ni { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.ss-ni-icon { font-size: 20px; opacity: 0.4; }
+.ss-ni-icon.act { opacity: 1; }
+.ss-ni-lbl { font-size: 10px; color: rgba(240,237,232,0.28); }
+.ss-ni-lbl.act { color: var(--purple); }
+
+/* Screen inner UI (scoped inside .ss-pf) */
+.ss-pf .s1-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.ss-pf .s1-greeting { font-size: 20px; font-weight: 700; color: #f0ede8; letter-spacing: -0.3px; }
+.ss-pf .s1-date { font-size: 13px; color: rgba(240,237,232,0.55); margin-top: 2px; }
+.ss-pf .s1-badge { background: rgba(157,127,240,0.15); border: 1px solid rgba(157,127,240,0.3); border-radius: 20px; padding: 6px 14px; font-size: 13px; font-weight: 500; color: var(--purple); }
+.ss-pf .week-strip { display: flex; gap: 6px; margin-bottom: 18px; }
+.ss-pf .week-day { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.ss-pf .wdn { font-size: 10px; color: rgba(240,237,232,0.28); text-transform: uppercase; }
+.ss-pf .wnum { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: rgba(240,237,232,0.55); }
+.ss-pf .wnum.today { background: var(--purple); color: white; font-weight: 700; }
+.ss-pf .wpips { display: flex; gap: 3px; }
+.ss-pf .pip { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.08); }
+.ss-pf .qcard { background: linear-gradient(135deg, rgba(157,127,240,0.15), rgba(232,95,138,0.08)); border: 1px solid rgba(157,127,240,0.2); border-radius: 16px; padding: 16px; margin-bottom: 16px; font-size: 14px; color: rgba(240,237,232,0.55); line-height: 1.5; }
+.ss-pf .srow { display: flex; gap: 10px; margin-bottom: 16px; }
+.ss-pf .scard { flex: 1; background: rgba(255,255,255,0.05); border-radius: 12px; padding: 12px; text-align: center; }
+.ss-pf .snum { font-size: 18px; font-weight: 600; color: #f0ede8; }
+.ss-pf .slbl { font-size: 10px; color: rgba(240,237,232,0.28); margin-top: 3px; }
+.ss-pf .stitle { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(240,237,232,0.28); margin-bottom: 10px; }
+.ss-pf .hcard { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.ss-pf .hcheck { width: 36px; height: 36px; border-radius: 50%; border: 2px solid; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
+.ss-pf .hname { font-size: 14px; font-weight: 500; color: #f0ede8; }
+.ss-pf .hmeta { font-size: 11px; color: rgba(240,237,232,0.28); margin-top: 3px; display: flex; gap: 8px; align-items: center; }
+.ss-pf .hdots { display: flex; gap: 3px; }
+.ss-pf .hdot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.08); }
+
+/* Achievements screen */
+.ss-pf .ach-hdr { text-align: center; margin-bottom: 24px; }
+.ss-pf .ach-ttl { font-size: 22px; font-weight: 700; color: #f0ede8; }
+.ss-pf .ach-sub { font-size: 13px; color: rgba(240,237,232,0.55); margin-top: 4px; }
+.ss-pf .ach-bar { height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; margin-top: 12px; }
+.ss-pf .ach-fill { height: 100%; background: linear-gradient(90deg, var(--purple), var(--pink)); border-radius: 2px; width: 37.5%; }
+.ss-pf .ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ss-pf .ach-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 18px; text-align: center; position: relative; }
+.ss-pf .ach-card.unlocked { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
+.ss-pf .ach-card.locked { opacity: 0.45; }
+.ss-pf .ach-chk { position: absolute; top: 10px; right: 10px; width: 20px; height: 20px; border-radius: 50%; background: var(--purple); display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; }
+.ss-pf .ach-icon { font-size: 36px; margin-bottom: 10px; }
+.ss-pf .ach-name { font-size: 13px; font-weight: 600; color: #f0ede8; margin-bottom: 4px; }
+.ss-pf .ach-desc { font-size: 11px; color: rgba(240,237,232,0.28); line-height: 1.4; }
+
+/* Share screen */
+.ss-pf .share-scr { background: linear-gradient(160deg, #1a0a2e 0%, #0f0f18 100%); min-height: 760px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; text-align: center; }
+.ss-pf .share-badge { width: 160px; height: 160px; border-radius: 40px; background: linear-gradient(135deg, #e8c547, #f07c4f); display: flex; align-items: center; justify-content: center; font-size: 72px; margin-bottom: 28px; box-shadow: 0 20px 60px rgba(232,197,71,0.3); }
+.ss-pf .share-ttl { font-size: 28px; font-weight: 700; color: white; line-height: 1.1; margin-bottom: 8px; }
+.ss-pf .share-sub { font-size: 15px; color: rgba(240,237,232,0.5); margin-bottom: 32px; line-height: 1.5; }
+.ss-pf .share-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 20px 28px; margin-bottom: 24px; width: 100%; }
+.ss-pf .share-clbl { font-size: 11px; color: rgba(240,237,232,0.35); margin-bottom: 6px; }
+.ss-pf .share-cval { font-size: 32px; font-weight: 700; color: #e8c547; }
+.ss-pf .share-btn { width: 100%; padding: 16px; border-radius: 28px; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; font-size: 16px; font-weight: 600; text-align: center; margin-bottom: 12px; }
+.ss-pf .share-btn2 { width: 100%; padding: 14px; border-radius: 28px; border: 1px solid rgba(255,255,255,0.15); color: rgba(240,237,232,0.5); font-size: 15px; text-align: center; }
+
+/* Community screen */
+.ss-pf .ctabs { display: flex; background: rgba(255,255,255,0.05); border-radius: 12px; padding: 4px; margin-bottom: 20px; }
+.ss-pf .ctab { flex: 1; padding: 8px; text-align: center; font-size: 14px; font-weight: 500; color: rgba(240,237,232,0.55); border-radius: 8px; }
+.ss-pf .ctab.act { background: rgba(255,255,255,0.08); color: #f0ede8; }
+.ss-pf .cshare { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px; margin-bottom: 14px; }
+.ss-pf .cshare-ttl { font-size: 13px; font-weight: 500; color: rgba(240,237,232,0.55); margin-bottom: 12px; }
+.ss-pf .cbtns { display: flex; gap: 8px; }
+.ss-pf .cbtn { flex: 1; background: rgba(157,127,240,0.12); border: 1px solid rgba(157,127,240,0.2); border-radius: 10px; padding: 10px 8px; text-align: center; }
+.ss-pf .cbtn-ico { font-size: 20px; }
+.ss-pf .cbtn-lbl { font-size: 11px; color: var(--purple); margin-top: 4px; }
+.ss-pf .fitem { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px; margin-bottom: 10px; }
+.ss-pf .fhdr { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.ss-pf .favatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--pink)); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: white; flex-shrink: 0; }
+.ss-pf .favatar2 { background: linear-gradient(135deg, #4fc17a, #5b9ef0); }
+.ss-pf .fname { font-size: 14px; font-weight: 600; color: #f0ede8; }
+.ss-pf .ftime { font-size: 11px; color: rgba(240,237,232,0.28); }
+.ss-pf .ftext { font-size: 14px; color: rgba(240,237,232,0.55); line-height: 1.5; margin-bottom: 10px; }
+.ss-pf .fbar { height: 4px; background: rgba(157,127,240,0.2); border-radius: 2px; margin-bottom: 10px; position: relative; overflow: hidden; }
+.ss-pf .fbar-fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--purple); border-radius: 2px; }
+.ss-pf .flike { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(240,237,232,0.28); }
+.ss-pf .flike-btn { color: var(--pink); font-size: 16px; }
+
+@media (max-width: 900px) {
+  .ss-section { padding: 60px 24px; }
+  .ss-phones-row { gap: 16px; }
+}
+
 /* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -720,6 +827,208 @@ footer {
       <div class="feature-title">3 Languages</div>
       <div class="feature-desc">Fully available in English, Russian, and Dutch. Because the best habits happen in your language, with your mindset.</div>
     </div>
+  </div>
+</section>
+
+<!-- APP SCREENSHOTS -->
+<section class="ss-section">
+  <div class="section-tag">App Preview</div>
+  <h2 class="section-title">See what's<br><span style="font-style:italic; background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">inside Pulse.</span></h2>
+  <p class="section-sub" style="margin-bottom: 60px;">A closer look at the screens you'll open every day — beautiful, clear, and built to keep you going.</p>
+
+  <div class="ss-phones-row">
+
+    <!-- Screen 1: Home -->
+    <div class="ss-phone-wrap">
+      <div class="ss-phone-label">Home</div>
+      <div class="ss-clip">
+        <div class="ss-pf">
+          <div class="ss-nb">
+            <div class="ss-time">9:41</div>
+            <div class="ss-isl"></div>
+            <div class="ss-ico">▶▶ 🔋</div>
+          </div>
+          <div class="ss-scr">
+            <div class="s1-header">
+              <div>
+                <div class="s1-greeting">Good morning, Sara ☀️</div>
+                <div class="s1-date">Saturday, 4 Apr</div>
+              </div>
+              <div class="s1-badge">4/6</div>
+            </div>
+            <div class="week-strip">
+              <div class="week-day"><div class="wdn">Mo</div><div class="wnum">30</div><div class="wpips"><div class="pip" style="background:#4fc17a"></div><div class="pip" style="background:#9d7ff0"></div><div class="pip" style="background:#e85f8a"></div></div></div>
+              <div class="week-day"><div class="wdn">Tu</div><div class="wnum">31</div><div class="wpips"><div class="pip" style="background:#4fc17a"></div><div class="pip" style="background:#9d7ff0"></div><div class="pip"></div></div></div>
+              <div class="week-day"><div class="wdn">We</div><div class="wnum">1</div><div class="wpips"><div class="pip" style="background:#4fc17a"></div><div class="pip"></div><div class="pip"></div></div></div>
+              <div class="week-day"><div class="wdn">Th</div><div class="wnum">2</div><div class="wpips"><div class="pip" style="background:#4fc17a"></div><div class="pip" style="background:#9d7ff0"></div><div class="pip" style="background:#e85f8a"></div></div></div>
+              <div class="week-day"><div class="wdn">Fr</div><div class="wnum">3</div><div class="wpips"><div class="pip" style="background:#4fc17a"></div><div class="pip" style="background:#e8c547"></div><div class="pip"></div></div></div>
+              <div class="week-day"><div class="wdn">Sa</div><div class="wnum today">4</div><div class="wpips"><div class="pip" style="background:#4fc17a"></div><div class="pip"></div><div class="pip"></div></div></div>
+              <div class="week-day"><div class="wdn">Su</div><div class="wnum">5</div><div class="wpips"><div class="pip"></div><div class="pip"></div><div class="pip"></div></div></div>
+            </div>
+            <div class="qcard">"Your strength grows with every completed day." ✨</div>
+            <div class="srow">
+              <div class="scard"><div class="snum">4/6</div><div class="slbl">today</div></div>
+              <div class="scard"><div class="snum">12</div><div class="slbl">best streak</div></div>
+              <div class="scard"><div class="snum">78%</div><div class="slbl">this week</div></div>
+            </div>
+            <div class="stitle">Today</div>
+            <div class="hcard">
+              <div class="hcheck" style="border-color:#4fc17a; background:#4fc17a; color:white;">✓</div>
+              <div style="flex:1">
+                <div class="hname">📚 Reading</div>
+                <div class="hmeta"><div class="hdots"><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div><div class="hdot" style="background:#4fc17a"></div></div><span style="color:#4fc17a; font-size:11px;">7 days 🔥</span></div>
+              </div>
+            </div>
+            <div class="hcard">
+              <div class="hcheck" style="border-color:#e85f8a; background:#e85f8a; color:white;">✓</div>
+              <div style="flex:1">
+                <div class="hname">🏃 Morning run</div>
+                <div class="hmeta"><div class="hdots"><div class="hdot" style="background:#e85f8a"></div><div class="hdot" style="background:#e85f8a"></div><div class="hdot" style="background:#e85f8a"></div><div class="hdot" style="background:#e85f8a"></div><div class="hdot" style="background:#e85f8a"></div><div class="hdot"></div><div class="hdot"></div></div><span>5/7 days</span></div>
+              </div>
+            </div>
+            <div class="hcard">
+              <div class="hcheck" style="border-color:#9d7ff0; background:#9d7ff0; color:white;">✓</div>
+              <div style="flex:1">
+                <div class="hname">💧 Water 2L</div>
+                <div class="hmeta"><div class="hdots"><div class="hdot" style="background:#9d7ff0"></div><div class="hdot" style="background:#9d7ff0"></div><div class="hdot" style="background:#9d7ff0"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div></div><span>3/7 days</span></div>
+              </div>
+            </div>
+            <div class="hcard">
+              <div class="hcheck" style="border-color:#e8c547;"></div>
+              <div style="flex:1">
+                <div class="hname">🧘 Meditation</div>
+                <div class="hmeta"><div class="hdots"><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div><div class="hdot"></div></div><span>0/7 days · 22:00 🔔</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="ss-bnav">
+            <div class="ss-ni"><div class="ss-ni-icon act">🏠</div><div class="ss-ni-lbl act">Home</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon">🕐</div><div class="ss-ni-lbl">History</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon">📅</div><div class="ss-ni-lbl">Calendar</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon">⭐</div><div class="ss-ni-lbl">Badges</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon">👥</div><div class="ss-ni-lbl">Community</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 2: Achievements -->
+    <div class="ss-phone-wrap">
+      <div class="ss-phone-label">Achievements</div>
+      <div class="ss-clip">
+        <div class="ss-pf">
+          <div class="ss-nb">
+            <div class="ss-time">9:42</div>
+            <div class="ss-isl"></div>
+            <div class="ss-ico">▶▶ 🔋</div>
+          </div>
+          <div class="ss-scr">
+            <div class="ach-hdr">
+              <div class="ach-ttl">Achievements</div>
+              <div class="ach-sub">3 of 8 unlocked</div>
+              <div class="ach-bar"><div class="ach-fill"></div></div>
+            </div>
+            <div class="ach-grid">
+              <div class="ach-card unlocked"><div class="ach-chk">✓</div><div class="ach-icon">🌱</div><div class="ach-name">First Step</div><div class="ach-desc">Add your first habit</div></div>
+              <div class="ach-card locked"><div class="ach-icon">🔥</div><div class="ach-name">7 Days</div><div class="ach-desc">7 days in a row</div></div>
+              <div class="ach-card locked"><div class="ach-icon">⚡</div><div class="ach-name">30 Days</div><div class="ach-desc">30 days straight</div></div>
+              <div class="ach-card locked"><div class="ach-icon">⭐</div><div class="ach-name">Perfect Day</div><div class="ach-desc">All habits in one day</div></div>
+              <div class="ach-card unlocked"><div class="ach-chk">✓</div><div class="ach-icon">🏆</div><div class="ach-name">Collector</div><div class="ach-desc">Create 10 habits</div></div>
+              <div class="ach-card unlocked"><div class="ach-chk">✓</div><div class="ach-icon">✨</div><div class="ach-name">Triad</div><div class="ach-desc">Add 3 habits</div></div>
+              <div class="ach-card locked"><div class="ach-icon">💎</div><div class="ach-name">2 Weeks</div><div class="ach-desc">14-day streak</div></div>
+              <div class="ach-card locked"><div class="ach-icon">🎯</div><div class="ach-name">Century</div><div class="ach-desc">100 completions</div></div>
+            </div>
+          </div>
+          <div class="ss-bnav">
+            <div class="ss-ni"><div class="ss-ni-icon">🏠</div><div class="ss-ni-lbl">Home</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon">🕐</div><div class="ss-ni-lbl">History</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon">📅</div><div class="ss-ni-lbl">Calendar</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon act">⭐</div><div class="ss-ni-lbl act">Badges</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon">👥</div><div class="ss-ni-lbl">Community</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 3: Share Badge -->
+    <div class="ss-phone-wrap">
+      <div class="ss-phone-label">Share Badge</div>
+      <div class="ss-clip">
+        <div class="ss-pf">
+          <div class="ss-nb">
+            <div class="ss-time">9:43</div>
+            <div class="ss-isl"></div>
+            <div class="ss-ico">▶▶ 🔋</div>
+          </div>
+          <div class="share-scr">
+            <div class="share-badge">🏆</div>
+            <div class="share-ttl">7 Days in a Row!</div>
+            <div class="share-sub">You've completed habits for 7 consecutive days. That's real consistency. 💜</div>
+            <div class="share-card">
+              <div class="share-clbl">Current Streak</div>
+              <div class="share-cval">7 🔥</div>
+            </div>
+            <div class="share-btn">Share to Instagram Stories</div>
+            <div class="share-btn2">Close</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 4: Community -->
+    <div class="ss-phone-wrap">
+      <div class="ss-phone-label">Community</div>
+      <div class="ss-clip">
+        <div class="ss-pf">
+          <div class="ss-nb">
+            <div class="ss-time">9:44</div>
+            <div class="ss-isl"></div>
+            <div class="ss-ico">▶▶ 🔋</div>
+          </div>
+          <div class="ss-scr">
+            <div style="font-size:22px;font-weight:700;color:#f0ede8;margin-bottom:16px;">Community</div>
+            <div class="ctabs">
+              <div class="ctab act">Feed</div>
+              <div class="ctab">Friends</div>
+            </div>
+            <div class="cshare">
+              <div class="cshare-ttl">Share your progress</div>
+              <div class="cbtns">
+                <div class="cbtn"><div class="cbtn-ico">📅</div><div class="cbtn-lbl">Today</div></div>
+                <div class="cbtn"><div class="cbtn-ico">📊</div><div class="cbtn-lbl">This week</div></div>
+                <div class="cbtn"><div class="cbtn-ico">🔥</div><div class="cbtn-lbl">Streak</div></div>
+              </div>
+            </div>
+            <div class="fitem">
+              <div class="fhdr">
+                <div class="favatar">S</div>
+                <div><div class="fname">Sara M.</div><div class="ftime">Just now · Amsterdam 🇳🇱</div></div>
+              </div>
+              <div class="ftext">Completed 4 out of 6 habits today ✓ 🏃 Morning run done!</div>
+              <div class="fbar"><div class="fbar-fill" style="width:67%"></div></div>
+              <div class="flike"><span class="flike-btn">♥</span> <span style="color:var(--pink)">Emma liked this</span></div>
+            </div>
+            <div class="fitem">
+              <div class="fhdr">
+                <div class="favatar favatar2">E</div>
+                <div><div class="fname">Emma L.</div><div class="ftime">2 min ago · London 🇬🇧</div></div>
+              </div>
+              <div class="ftext">Just finished morning yoga 🧘‍♀️ 5/7 days this week — best week yet!</div>
+              <div class="fbar"><div class="fbar-fill" style="width:71%; background: linear-gradient(90deg,#4fc17a,#5b9ef0)"></div></div>
+              <div class="flike"><span class="flike-btn">🤍</span> 3 likes</div>
+            </div>
+          </div>
+          <div class="ss-bnav">
+            <div class="ss-ni"><div class="ss-ni-icon">🏠</div><div class="ss-ni-lbl">Home</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon">🕐</div><div class="ss-ni-lbl">History</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon">📅</div><div class="ss-ni-lbl">Calendar</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon">⭐</div><div class="ss-ni-lbl">Badges</div></div>
+            <div class="ss-ni"><div class="ss-ni-icon act">👥</div><div class="ss-ni-lbl act">Community</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
