@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse — Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #0f0f13;
+      --card: #1a1a24;
+      --accent: #9d7ff0;
+      --text: #e8e8f0;
+      --muted: #888899;
+      --border: #2a2a38;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+    }
+
+    .lang-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .lang-btn {
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .lang-btn:hover:not(.active) {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .policy-section { display: none; }
+    .policy-section.visible { display: block; }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 2rem 0 0.6rem;
+    }
+
+    p {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    ul {
+      padding-left: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    ul li {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .highlight-box {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .contact-link {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-link:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="logo">Pulse</div>
+  <div class="tagline">Habit Tracker</div>
+
+  <div class="lang-tabs">
+    <button class="lang-btn active" onclick="switchLang('en')">English</button>
+    <button class="lang-btn" onclick="switchLang('ru')">Русский</button>
+    <button class="lang-btn" onclick="switchLang('nl')">Nederlands</button>
+  </div>
+
+  <!-- ──────────────────── ENGLISH ──────────────────── -->
+  <div id="policy-en" class="policy-section visible">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: April 7, 2026</p>
+
+    <div class="highlight-box">
+      <strong>Short version:</strong> Pulse stores all your data exclusively on your device.
+      We do not collect, transmit, or share any personal information.
+    </div>
+
+    <h2>1. Information We Collect</h2>
+    <p>Pulse does <strong>not</strong> collect any personal information. All data you enter — including habit names, completions, mood logs, and your name — is stored <strong>only on your device</strong> using Apple's local storage (AsyncStorage).</p>
+
+    <h2>2. Data Storage</h2>
+    <p>All app data is stored locally on your device and is never transmitted to any server. This includes:</p>
+    <ul>
+      <li>Habit names, icons, and settings</li>
+      <li>Daily completion records</li>
+      <li>Mood entries</li>
+      <li>Your display name</li>
+      <li>App preferences (theme, language)</li>
+    </ul>
+    <p>Your data is removed when you uninstall the app.</p>
+
+    <h2>3. Notifications</h2>
+    <p>Pulse may request permission to send local push notifications to remind you about your habits. These reminders are scheduled entirely on your device. No notification data is sent to any external server. You can disable notifications at any time in your device's Settings.</p>
+
+    <h2>4. Community Feature</h2>
+    <p>The Community screen displays simulated activity for illustration purposes only. It does not connect to any server, and no real user data is shared or transmitted.</p>
+
+    <h2>5. Third-Party Services</h2>
+    <p>Pulse does not integrate any third-party analytics, advertising, or tracking SDKs. We do not use Google Analytics, Facebook SDK, or any similar services.</p>
+
+    <h2>6. Children's Privacy</h2>
+    <p>Pulse does not knowingly collect any information from children under 13. The app does not require account creation or any personal data to function.</p>
+
+    <h2>7. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy occasionally. Any changes will be reflected on this page with an updated date. Continued use of the app after changes means you accept the updated policy.</p>
+
+    <h2>8. Contact</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us at: <a class="contact-link" href="mailto:pulse.habitapp@gmail.com">pulse.habitapp@gmail.com</a></p>
+  </div>
+
+  <!-- ──────────────────── RUSSIAN ──────────────────── -->
+  <div id="policy-ru" class="policy-section">
+    <h1>Политика конфиденциальности</h1>
+    <p class="updated">Последнее обновление: 7 апреля 2026 г.</p>
+
+    <div class="highlight-box">
+      <strong>Кратко:</strong> Pulse хранит все данные исключительно на вашем устройстве.
+      Мы не собираем, не передаём и не продаём никакие персональные данные.
+    </div>
+
+    <h2>1. Какие данные мы собираем</h2>
+    <p>Pulse <strong>не собирает</strong> никакой личной информации. Все данные, которые вы вводите — названия привычек, отметки выполнения, записи настроения и ваше имя — хранятся <strong>только на вашем устройстве</strong> с помощью локального хранилища (AsyncStorage).</p>
+
+    <h2>2. Хранение данных</h2>
+    <p>Все данные приложения хранятся локально и никогда не передаются на какой-либо сервер. Это включает:</p>
+    <ul>
+      <li>Названия привычек, иконки и настройки</li>
+      <li>Записи о ежедневном выполнении</li>
+      <li>Записи настроения</li>
+      <li>Ваше имя в приложении</li>
+      <li>Настройки приложения (тема, язык)</li>
+    </ul>
+    <p>Данные удаляются при удалении приложения с устройства.</p>
+
+    <h2>3. Уведомления</h2>
+    <p>Pulse может запросить разрешение на отправку локальных push-уведомлений для напоминания о привычках. Эти напоминания формируются исключительно на вашем устройстве. Никакие данные об уведомлениях не отправляются на внешние серверы. Вы можете отключить уведомления в любой момент в настройках устройства.</p>
+
+    <h2>4. Функция «Сообщество»</h2>
+    <p>Экран «Сообщество» отображает смоделированную активность исключительно в демонстрационных целях. Он не подключается ни к каким серверам, и никакие реальные пользовательские данные не передаются и не публикуются.</p>
+
+    <h2>5. Сторонние сервисы</h2>
+    <p>Pulse не использует сторонние аналитические, рекламные или трекинговые SDK. Мы не используем Google Analytics, Facebook SDK или аналогичные сервисы.</p>
+
+    <h2>6. Конфиденциальность детей</h2>
+    <p>Pulse не собирает намеренно никакой информации от детей до 13 лет. Приложение не требует создания аккаунта или ввода персональных данных для работы.</p>
+
+    <h2>7. Изменения политики</h2>
+    <p>Мы можем периодически обновлять настоящую Политику конфиденциальности. Любые изменения будут отражены на этой странице с обновлённой датой. Продолжение использования приложения после изменений означает ваше согласие с обновлённой политикой.</p>
+
+    <h2>8. Контакты</h2>
+    <p>Если у вас есть вопросы по поводу данной Политики конфиденциальности, свяжитесь с нами: <a class="contact-link" href="mailto:pulse.habitapp@gmail.com">pulse.habitapp@gmail.com</a></p>
+  </div>
+
+  <!-- ──────────────────── DUTCH ──────────────────── -->
+  <div id="policy-nl" class="policy-section">
+    <h1>Privacybeleid</h1>
+    <p class="updated">Laatst bijgewerkt: 7 april 2026</p>
+
+    <div class="highlight-box">
+      <strong>Kort samengevat:</strong> Pulse slaat al uw gegevens uitsluitend op uw apparaat op.
+      Wij verzamelen, verzenden of delen geen persoonlijke informatie.
+    </div>
+
+    <h2>1. Welke informatie we verzamelen</h2>
+    <p>Pulse verzamelt <strong>geen</strong> persoonlijke informatie. Alle gegevens die u invoert — namen van gewoontes, voltooiingen, stemmingsdagboek en uw naam — worden <strong>alleen op uw apparaat</strong> opgeslagen via lokale opslag (AsyncStorage).</p>
+
+    <h2>2. Gegevensopslag</h2>
+    <p>Alle appgegevens worden lokaal op uw apparaat opgeslagen en worden nooit naar een server verzonden. Dit omvat:</p>
+    <ul>
+      <li>Namen, pictogrammen en instellingen van gewoontes</li>
+      <li>Dagelijkse voltooiingsregistraties</li>
+      <li>Stemmingsinvoeren</li>
+      <li>Uw weergavenaam</li>
+      <li>App-voorkeuren (thema, taal)</li>
+    </ul>
+    <p>Uw gegevens worden verwijderd wanneer u de app verwijdert.</p>
+
+    <h2>3. Meldingen</h2>
+    <p>Pulse kan toestemming vragen om lokale pushmeldingen te sturen als herinnering voor uw gewoontes. Deze herinneringen worden volledig op uw apparaat gepland. Er worden geen meldingsgegevens naar externe servers verzonden. U kunt meldingen op elk moment uitschakelen in de instellingen van uw apparaat.</p>
+
+    <h2>4. Community-functie</h2>
+    <p>Het Community-scherm toont gesimuleerde activiteit uitsluitend ter illustratie. Het maakt geen verbinding met servers en er worden geen echte gebruikersgegevens gedeeld of verzonden.</p>
+
+    <h2>5. Diensten van derden</h2>
+    <p>Pulse integreert geen analyse-, reclame- of tracking-SDK's van derden. We gebruiken geen Google Analytics, Facebook SDK of vergelijkbare diensten.</p>
+
+    <h2>6. Privacy van kinderen</h2>
+    <p>Pulse verzamelt bewust geen informatie van kinderen onder de 13 jaar. De app vereist geen accountaanmaak of persoonlijke gegevens om te werken.</p>
+
+    <h2>7. Wijzigingen in dit beleid</h2>
+    <p>We kunnen dit Privacybeleid af en toe bijwerken. Eventuele wijzigingen worden op deze pagina weergegeven met een bijgewerkte datum. Voortgezet gebruik van de app na wijzigingen betekent dat u het bijgewerkte beleid accepteert.</p>
+
+    <h2>8. Contact</h2>
+    <p>Als u vragen heeft over dit Privacybeleid, neem dan contact met ons op: <a class="contact-link" href="mailto:pulse.habitapp@gmail.com">pulse.habitapp@gmail.com</a></p>
+  </div>
+
+  <footer>
+    &copy; 2026 Pulse Habit Tracker. All rights reserved.
+  </footer>
+
+</div>
+
+<script>
+  function switchLang(lang) {
+    document.querySelectorAll('.policy-section').forEach(el => el.classList.remove('visible'));
+    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('policy-' + lang).classList.add('visible');
+    event.target.classList.add('active');
+  }
+
+  // Auto-detect browser language
+  const browserLang = (navigator.language || 'en').toLowerCase();
+  if (browserLang.startsWith('ru')) switchLang('ru');
+  else if (browserLang.startsWith('nl')) switchLang('nl');
+</script>
+</body>
+</html>
