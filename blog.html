@@ -149,7 +149,38 @@
 <div class="blog-grid">
 
   <a href="blog-post-1.html" class="post-card">
-    <div class="post-thumb purple">🧠</div>
+    <div class="post-thumb purple">
+      <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Calendar background -->
+        <rect x="40" y="50" width="120" height="110" rx="12" fill="rgba(157,127,240,0.15)" stroke="rgba(157,127,240,0.4)" stroke-width="1.5"/>
+        <rect x="40" y="50" width="120" height="30" rx="12" fill="rgba(157,127,240,0.35)"/>
+        <rect x="40" y="68" width="120" height="12" fill="rgba(157,127,240,0.35)"/>
+        <!-- Calendar header dots -->
+        <circle cx="68" cy="46" r="5" fill="#9d7ff0"/>
+        <circle cx="132" cy="46" r="5" fill="#9d7ff0"/>
+        <!-- Day grid -->
+        <rect x="52" y="92" width="14" height="14" rx="3" fill="rgba(157,127,240,0.5)"/>
+        <rect x="72" y="92" width="14" height="14" rx="3" fill="rgba(157,127,240,0.5)"/>
+        <rect x="92" y="92" width="14" height="14" rx="3" fill="#9d7ff0"/>
+        <rect x="112" y="92" width="14" height="14" rx="3" fill="#9d7ff0"/>
+        <rect x="132" y="92" width="14" height="14" rx="3" fill="rgba(157,127,240,0.3)"/>
+        <rect x="52" y="112" width="14" height="14" rx="3" fill="#9d7ff0"/>
+        <rect x="72" y="112" width="14" height="14" rx="3" fill="rgba(157,127,240,0.5)"/>
+        <rect x="92" y="112" width="14" height="14" rx="3" fill="rgba(157,127,240,0.3)"/>
+        <rect x="112" y="112" width="14" height="14" rx="3" fill="#9d7ff0"/>
+        <rect x="132" y="112" width="14" height="14" rx="3" fill="#9d7ff0"/>
+        <rect x="52" y="132" width="14" height="14" rx="3" fill="rgba(157,127,240,0.3)"/>
+        <rect x="72" y="132" width="14" height="14" rx="3" fill="#9d7ff0"/>
+        <rect x="92" y="132" width="14" height="14" rx="3" fill="#9d7ff0"/>
+        <rect x="112" y="132" width="14" height="14" rx="3" fill="rgba(157,127,240,0.5)"/>
+        <rect x="132" y="132" width="14" height="14" rx="3" fill="rgba(157,127,240,0.3)"/>
+        <!-- "21" crossed out -->
+        <text x="100" y="68" font-family="sans-serif" font-size="11" font-weight="700" fill="rgba(240,237,232,0.7)" text-anchor="middle">21 DAYS?</text>
+        <!-- X mark -->
+        <line x1="155" y1="55" x2="167" y2="67" stroke="#e85f8a" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="167" y1="55" x2="155" y2="67" stroke="#e85f8a" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
     <div class="post-body">
       <span class="post-tag">Habit Science</span>
       <div class="post-title">Why 21 Days Is a Myth: How Long Habits Actually Take</div>
@@ -162,7 +193,29 @@
   </a>
 
   <a href="blog-post-2.html" class="post-card">
-    <div class="post-thumb pink">⚡</div>
+    <div class="post-thumb pink">
+      <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Timer circle -->
+        <circle cx="100" cy="100" r="55" fill="rgba(232,95,138,0.1)" stroke="rgba(232,95,138,0.3)" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="45" fill="none" stroke="rgba(232,95,138,0.15)" stroke-width="8"/>
+        <!-- Progress arc — ~1/6 of circle (2 minutes) -->
+        <circle cx="100" cy="100" r="45" fill="none" stroke="url(#timerGrad)" stroke-width="8"
+          stroke-dasharray="47 236" stroke-dashoffset="70" stroke-linecap="round"/>
+        <defs>
+          <linearGradient id="timerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#e85f8a"/>
+            <stop offset="100%" stop-color="#9d7ff0"/>
+          </linearGradient>
+        </defs>
+        <!-- Center text -->
+        <text x="100" y="94" font-family="sans-serif" font-size="26" font-weight="900" fill="#f0ede8" text-anchor="middle">2</text>
+        <text x="100" y="112" font-family="sans-serif" font-size="11" font-weight="600" fill="rgba(232,95,138,0.9)" text-anchor="middle">MIN</text>
+        <!-- Top knob -->
+        <rect x="94" y="42" width="12" height="7" rx="3" fill="rgba(232,95,138,0.6)"/>
+        <!-- Lightning bolt -->
+        <polygon points="108,58 98,78 105,78 92,98 106,76 99,76" fill="#e85f8a" opacity="0.9"/>
+      </svg>
+    </div>
     <div class="post-body">
       <span class="post-tag">Getting Started</span>
       <div class="post-title">The 2-Minute Rule: How to Start Any Habit Right Now</div>
@@ -175,7 +228,42 @@
   </a>
 
   <a href="blog-post-3.html" class="post-card">
-    <div class="post-thumb gold">📊</div>
+    <div class="post-thumb gold">
+      <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="barGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#e8c547"/>
+            <stop offset="100%" stop-color="rgba(232,197,71,0.3)"/>
+          </linearGradient>
+          <linearGradient id="barGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#9d7ff0"/>
+            <stop offset="100%" stop-color="rgba(157,127,240,0.3)"/>
+          </linearGradient>
+        </defs>
+        <!-- Axis -->
+        <line x1="45" y1="150" x2="160" y2="150" stroke="rgba(240,237,232,0.15)" stroke-width="1.5"/>
+        <line x1="45" y1="60" x2="45" y2="150" stroke="rgba(240,237,232,0.15)" stroke-width="1.5"/>
+        <!-- Bars -->
+        <rect x="55" y="120" width="16" height="30" rx="4" fill="url(#barGrad2)" opacity="0.6"/>
+        <rect x="77" y="108" width="16" height="42" rx="4" fill="url(#barGrad2)" opacity="0.7"/>
+        <rect x="99" y="90" width="16" height="60" rx="4" fill="url(#barGrad1)" opacity="0.85"/>
+        <rect x="121" y="72" width="16" height="78" rx="4" fill="url(#barGrad1)"/>
+        <!-- Trend line -->
+        <polyline points="63,118 85,106 107,86 129,70" fill="none" stroke="#e8c547" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 2" opacity="0.7"/>
+        <!-- Dots on trend -->
+        <circle cx="63" cy="118" r="3.5" fill="#e8c547"/>
+        <circle cx="85" cy="106" r="3.5" fill="#e8c547"/>
+        <circle cx="107" cy="86" r="3.5" fill="#e8c547"/>
+        <circle cx="129" cy="70" r="4.5" fill="#e8c547"/>
+        <!-- Arrow up -->
+        <polyline points="129,58 136,66 122,66" fill="#e8c547" opacity="0.9"/>
+        <!-- Labels -->
+        <text x="63" y="163" font-family="sans-serif" font-size="8" fill="rgba(240,237,232,0.4)" text-anchor="middle">W1</text>
+        <text x="85" y="163" font-family="sans-serif" font-size="8" fill="rgba(240,237,232,0.4)" text-anchor="middle">W2</text>
+        <text x="107" y="163" font-family="sans-serif" font-size="8" fill="rgba(240,237,232,0.4)" text-anchor="middle">W3</text>
+        <text x="129" y="163" font-family="sans-serif" font-size="8" fill="rgba(232,197,71,0.9)" text-anchor="middle">W4</text>
+      </svg>
+    </div>
     <div class="post-body">
       <span class="post-tag">Tracking & Progress</span>
       <div class="post-title">How a Habit Tracker Changes Your Brain in 30 Days</div>
