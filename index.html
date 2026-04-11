@@ -735,7 +735,30 @@ footer {
   .form-group input:not([type="checkbox"]),
   .form-group select { font-size: 16px; }
   .btn-submit { font-size: 15px; padding: 14px 24px; }
-}
+}/* ── FAQ ── */                                                                       
+  .faq-section { padding: 100px 40px; }                                                 
+  .faq-inner { max-width: 720px; margin: 0 auto; }                                      
+  .faq-list { display: flex; flex-direction: column; gap: 12px; }                       
+  .faq-item {                                                                           
+    background: #13131f;
+    border: 1px solid rgba(157,127,240,0.12);                                           
+    border-radius: 16px; overflow: hidden;                                              
+    transition: border-color .25s;                                                      
+  }                                                                                     
+  .faq-question { 
+    width: 100%; background: none; border: none;                                        
+    display: flex; justify-content: space-between; align-items: center;                 
+    padding: 22px 24px; cursor: pointer; text-align: left;
+    font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 600;              
+    color: #f0ede8;                                                                     
+  }                                                                                     
+  .faq-icon { font-size: 22px; color: #9d7ff0; transition: transform .3s; flex-shrink:  
+  0; margin-left: 16px; }                                                               
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+  .faq-answer.open { max-height: 300px; }                                               
+  .faq-answer p { padding: 0 24px 22px; font-size: 15px; color: rgba(240,237,232,0.6);  
+  line-height: 1.7; }                                                                   
+  .faq-icon.rotated { transform: rotate(45deg); 
 </style>
 </head>
 <body>
@@ -1148,8 +1171,179 @@ footer {
   </div>
 </section>
 
-<!-- DOWNLOAD / EARLY ACCESS -->
+<!-- DOWNLOAD / EARLY ACCESS --><!-- FAQ -->                                                                          
+  <section class="faq-section" id="faq">                                                
+    <div class="faq-inner">                                                             
+      <div class="section-tag" style="text-align:center;">FAQ</div>                     
+      <h2 class="section-title" style="text-align:center; margin-bottom:48px;">Questions
+   & Answers</h2>                                                                       
+      <div class="faq-list">                                                            
+                                                                                        
+        <div class="faq-item">                                                          
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Is Pulse free to use?                                                       
+            <span class="faq-icon">+</span>
+          </button>                                                                     
+          <div class="faq-answer">
+            <p>Yes — Pulse is completely free to download and use. All core features    
+  including habit tracking, mood check-ins, calendar, analytics, and the AI coach are   
+  available at no cost.</p>
+          </div>                                                                        
+        </div>    
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Who is Pulse for?
+            <span class="faq-icon">+</span>                                             
+          </button>
+          <div class="faq-answer">                                                      
+            <p>Pulse is for anyone who wants to build better daily routines — whether
+  you're trying to exercise more, read regularly, meditate, or simply be more           
+  intentional about your day. If you've ever started a habit and given up after two
+  weeks, Pulse was built for you.</p>                                                   
+          </div>  
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How is Pulse different from other habit apps?                               
+            <span class="faq-icon">+</span>
+          </button>                                                                     
+          <div class="faq-answer">
+            <p>Most habit apps just give you a checklist. Pulse combines habit tracking 
+  with mood correlation, an AI coach, guided meditations, life goal planning, and weekly
+   analytics — all in one place. No account required, your data stays on your           
+  device.</p>                                                                           
+          </div>  
+        </div>                                                                          
+   
+        <div class="faq-item">                                                          
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Is my data private?
+            <span class="faq-icon">+</span>
+          </button>                                                                     
+          <div class="faq-answer">
+            <p>Absolutely. Pulse stores all your data locally on your device — we don't 
+  have servers that collect your habits, moods, or goals. No account is required to use 
+  the app. What you track stays yours, always.</p>
+          </div>                                                                        
+        </div>    
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Which devices is Pulse available on?                                        
+            <span class="faq-icon">+</span>
+          </button>                                                                     
+          <div class="faq-answer">
+            <p>Pulse is currently available on iOS (iPhone, requires iOS 16 or later).  
+  An Android version is planned for later in 2026. Sign up to be notified when it       
+  launches.</p>                                                                         
+          </div>                                                                        
+        </div>    
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What languages does Pulse support?                                          
+            <span class="faq-icon">+</span>
+          </button>                                                                     
+          <div class="faq-answer">
+            <p>Pulse is fully available in English, Russian (Русский), and Dutch        
+  (Nederlands) — including the AI coach, meditations, and all app content. More         
+  languages are coming based on user demand.</p>                                        
+          </div>                                                                        
+        </div>    
+
+      </div>
+    </div>
+  </section>
 <section class="download-section" id="download">
+  <!-- FAQ -->                                                                          
+  <section class="faq-section" id="faq">                                                
+    <div class="faq-inner">                                                             
+      <div class="section-tag" style="text-align:center;">FAQ</div>                     
+      <h2 class="section-title" style="text-align:center; margin-bottom:48px;">Questions
+   & Answers</h2>                                                                       
+      <div class="faq-list">                                                            
+                                                                                        
+        <div class="faq-item">                                                          
+          <button class="faq-question" onclick="toggleFaq(this)">                       
+            Is Pulse free to use?                                                       
+            <span class="faq-icon">+</span>
+          </button>                                                                     
+          <div class="faq-answer">
+            <p>Yes — Pulse is completely free to download and use. All core features    
+  including habit tracking, mood check-ins, calendar, analytics, and the AI coach are   
+  available at no cost. We may introduce optional premium features in the future, but
+  the app will always have a free plan.</p>                                             
+          </div>  
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Who is Pulse for?
+            <span class="faq-icon">+</span>                                             
+          </button>
+          <div class="faq-answer">                                                      
+            <p>Pulse is for anyone who wants to build better daily routines — whether
+  you're trying to exercise more, read regularly, meditate, drink more water, or simply 
+  be more intentional about your day. It works for students, professionals, parents, and
+   teams alike. If you've ever started a habit and given up after two weeks, Pulse was  
+  built for you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How is Pulse different from other habit apps?
+            <span class="faq-icon">+</span>                                             
+          </button>
+          <div class="faq-answer">                                                      
+            <p>Most habit apps just give you a checklist. Pulse combines habit tracking
+  with mood correlation, an AI coach, guided meditations, life goal planning, and weekly
+   analytics — all in one place. It's also available in English, Russian, and Dutch, and
+   works fully offline. No account required, your data stays on your device.</p>        
+          </div>  
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Is my data private?
+            <span class="faq-icon">+</span>                                             
+          </button>
+          <div class="faq-answer">                                                      
+            <p>Absolutely. Pulse stores all your data locally on your device — we don't
+  have servers that collect your habits, moods, or goals. No account is required to use 
+  the app. What you track stays yours, always.</p>
+          </div>                                                                        
+        </div>    
+                                                                                        
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">                       
+            Which devices is Pulse available on?
+            <span class="faq-icon">+</span>                                             
+          </button>
+          <div class="faq-answer">                                                      
+            <p>Pulse is currently available on iOS (iPhone, requires iOS 16 or later).
+  An Android version is planned for later in 2026. Sign up to be notified when it       
+  launches.</p>
+          </div>                                                                        
+        </div>    
+
+        <div class="faq-item">                                                          
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What languages does Pulse support?                                          
+            <span class="faq-icon">+</span>
+          </button>                                                                     
+          <div class="faq-answer">
+            <p>Pulse is fully available in English, Russian (Русский), and Dutch        
+  (Nederlands) — including the AI coach, meditations, and all app content. More         
+  languages are coming based on user demand.</p>
+          </div>                                                                        
+        </div>    
+
+      </div>                                                                            
+    </div>
+  </section>
   <div class="download-bg"></div>
   <h2>Be the first to<br><em>get Pulse free.</em></h2>
   <p class="download-sub">Leave your details and we'll send you the app link the moment it's live — completely free.</p>
@@ -1303,7 +1497,12 @@ footer {
       btn.textContent = 'Notify me when it\'s live ✨';
       alert('Network error. Please check your connection.');
     }
-  }
+  }function toggleFaq(btn) {                                                             
+    const answer = btn.nextElementSibling;                                              
+    const icon = btn.querySelector('.faq-icon');                                        
+    answer.classList.toggle('open');                                                    
+    icon.classList.toggle('rotated');
+  }                       
 </script>
 </body>
 </html>
